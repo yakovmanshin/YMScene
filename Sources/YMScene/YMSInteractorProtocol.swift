@@ -10,7 +10,7 @@
 
 // MARK: - Interactor Protocol
 
-protocol YMSInteractorProtocol: AnyObject {
+public protocol YMSInteractorProtocol: AnyObject {
     
     // MARK: Associated Types
     
@@ -38,7 +38,7 @@ protocol YMSInteractorProtocol: AnyObject {
 
 // MARK: - Default Implementation
 
-extension YMSInteractorProtocol {
+public extension YMSInteractorProtocol {
     
     func initializeScene(using input: DTO.Input) { }
     

@@ -13,7 +13,7 @@ import UIKit
 // MARK: - YMScene Core
 
 /// The base class scenes inherit from.
-class YMScene<
+public class YMScene<
     DTO,
     Interactor,
     Presenter: YMSPresenterProtocol,
@@ -27,8 +27,8 @@ class YMScene<
     
     // MARK: Properties
     
-    final let interactor: Interactor
-    final let viewController: ViewController
+    final public let interactor: Interactor
+    final public let viewController: ViewController
     
     // MARK: Initializers
     
@@ -50,7 +50,7 @@ class YMScene<
     ///
     /// - Parameter input: *Required.* The input provided by the object instantiating the scene.
     /// - Parameter viewController: *Optional.* The view controller to use in the scene, if one is already instantiated. Default is `nil`.
-    convenience init(with input: DTO.Input, viewController: ViewController? = nil) {
+    public convenience init(with input: DTO.Input, viewController: ViewController? = nil) {
         self.init(viewController: viewController)
         
         interactor.initializeScene(using: input)

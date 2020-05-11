@@ -12,7 +12,7 @@ import UIKit
 
 // MARK: - Presenter Protocol
 
-protocol YMSPresenterProtocol {
+public protocol YMSPresenterProtocol {
     
     // MARK: Associated Types
     

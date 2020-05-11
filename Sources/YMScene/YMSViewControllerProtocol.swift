@@ -12,7 +12,7 @@ import UIKit
 
 // MARK: - View Controller Protocol
 
-protocol YMSViewControllerProtocol: UIViewController {
+public protocol YMSViewControllerProtocol: UIViewController {
     
     // MARK: Associated Types
     
@@ -38,7 +38,7 @@ protocol YMSViewControllerProtocol: UIViewController {
 
 // MARK: - Default Implementation
 
-extension YMSViewControllerProtocol {
+public extension YMSViewControllerProtocol {
     
     func setInteractorIfNeeded(_ interactor: Interactor) {
         if self.interactor == nil {

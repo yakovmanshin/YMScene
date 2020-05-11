@@ -10,7 +10,7 @@
 
 // MARK: - DTO Protocol
 
-protocol YMSDTOProtocol {
+public protocol YMSDTOProtocol {
     
     // MARK: Associated Types
     
