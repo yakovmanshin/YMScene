@@ -35,25 +35,40 @@ open class YMScene<
     /// Automatically initializes scene components of types specified in class declaration.
     ///
     /// - Parameter viewController: *Optional.* The view controller to use in the scene, if one is already instantiated.
+    @available(*, unavailable)
     private init(viewController: ViewController?) {
-        let viewController = Self.getResolvedViewController(viewController)
-        let presenter = Presenter(with: viewController)
-        let interactor = Interactor(with: presenter)
+        let sceneComponents = Self.makeRequiredComponents(viewController: viewController)
         
-        viewController.setInteractorIfNeeded(interactor)
-        
-        self.interactor = interactor
-        self.viewController = viewController
+        self.interactor = sceneComponents.interactor
+        self.viewController = sceneComponents.viewController
     }
     
     /// Initializes the scene with the provided input.
     ///
     /// - Parameter input: *Required.* The input provided by the object instantiating the scene.
     /// - Parameter viewController: *Optional.* The view controller to use in the scene, if one is already instantiated. Default is `nil`.
-    public convenience init(with input: DTO.Input, viewController: ViewController? = nil) {
-        self.init(viewController: viewController)
+    public init(with input: DTO.Input, viewController: ViewController? = nil) {
+        let sceneComponents = Self.makeRequiredComponents(viewController: viewController)
+        
+        self.interactor = sceneComponents.interactor
+        self.viewController = sceneComponents.viewController
         
         interactor.configureScene(with: input)
+    }
+    
+    /// Initializes required scene components.
+    ///
+    /// - Parameter viewController: *Required.* The view controller if one is already instantiated; otherwise, pass `nil`.
+    ///
+    /// - Returns: `RequiredComponents`. The required components of the newly-created scene.
+    private static func makeRequiredComponents(viewController: ViewController?) -> RequiredComponents {
+        let viewController = Self.getResolvedViewController(viewController)
+        let presenter = Presenter(with: viewController)
+        let interactor = Interactor(with: presenter)
+        
+        viewController.setInteractorIfNeeded(interactor)
+        
+        return RequiredComponents(interactor: interactor, viewController: viewController)
     }
     
     /// Checks whether the passed view controller exists, and returns either the passed view controller or a new view controller instance.
@@ -68,6 +83,18 @@ open class YMScene<
         }
         
         return resolvedViewController
+    }
+    
+}
+
+// MARK: - Supplemental Models
+
+private extension YMScene {
+    
+    /// The object that holds the required components of a scene.
+    struct RequiredComponents {
+        let interactor: Interactor
+        let viewController: ViewController
     }
     
 }
