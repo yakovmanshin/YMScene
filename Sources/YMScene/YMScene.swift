@@ -13,7 +13,7 @@ import UIKit
 // MARK: - YMScene Core
 
 /// The base class scenes inherit from.
-public class YMScene<
+open class YMScene<
     DTO,
     Interactor,
     Presenter: YMSPresenterProtocol,
