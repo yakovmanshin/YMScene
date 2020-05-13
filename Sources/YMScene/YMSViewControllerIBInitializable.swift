@@ -19,7 +19,7 @@ public protocol YMSViewControllerIBInitializable: YMSViewControllerProtocol {
     /// Use this method to configure scenes instantiated from a NIB or storyboard.
     ///
     /// - Parameter input: *Required.* The input used for configuring the scene.
-    func initializeScene(with input: DTO.Input)
+    func configureScene(with input: DTO.Input)
     
 }
 
