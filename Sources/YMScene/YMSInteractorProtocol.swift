@@ -32,15 +32,7 @@ public protocol YMSInteractorProtocol: AnyObject {
     /// Initializes the scene with the provided input, and prepares it for display.
     ///
     /// - Parameter input: *Required.* The input provided by the object instantiating the scene.
-    func initializeScene(using input: DTO.Input)
-    
-}
-
-// MARK: - Default Implementation
-
-public extension YMSInteractorProtocol {
-    
-    func initializeScene(using input: DTO.Input) { }
+    func initializeScene(with input: DTO.Input)
     
 }
 
