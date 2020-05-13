@@ -27,12 +27,12 @@ public protocol YMSInteractorProtocol: AnyObject {
     
     init(with presenter: Presenter)
     
-    // MARK: Optional Methods
+    // MARK: Scene Configuration
     
-    /// Initializes the scene with the provided input, and prepares it for display.
+    /// Configures the scene with the provided input, and prepares it for display.
     ///
     /// - Parameter input: *Required.* The input provided by the object instantiating the scene.
-    func initializeScene(with input: DTO.Input)
+    func configureScene(with input: DTO.Input)
     
 }
 

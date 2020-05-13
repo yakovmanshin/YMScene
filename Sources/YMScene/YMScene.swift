@@ -53,7 +53,7 @@ open class YMScene<
     public convenience init(with input: DTO.Input, viewController: ViewController? = nil) {
         self.init(viewController: viewController)
         
-        interactor.initializeScene(with: input)
+        interactor.configureScene(with: input)
     }
     
     /// Checks whether the passed view controller exists, and returns either the passed view controller or a new view controller instance.
