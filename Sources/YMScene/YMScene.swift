@@ -68,6 +68,12 @@ open class YMScene<
         
         viewController.setInteractorIfNeeded(interactor)
         
+        if #available(iOS 9, *) {
+            viewController.loadViewIfNeeded()
+        } else {
+            _ = viewController.view
+        }
+        
         return RequiredComponents(interactor: interactor, viewController: viewController)
     }
     
