@@ -10,6 +10,7 @@
 
 // MARK: - DTO Protocol
 
+/// A protocol that describes *data transfer objects* (DTOs) used to pass data in VIP cycles.
 public protocol YMSDTOProtocol {
     
     // MARK: Associated Types

@@ -12,6 +12,7 @@ import UIKit
 
 // MARK: - View Controller Protocol
 
+/// A protocol that describes the scene's view controller.
 public protocol YMSViewControllerProtocol: UIViewController {
     
     // MARK: Associated Types

@@ -10,6 +10,7 @@
 
 // MARK: - Interactor Protocol
 
+/// A protocol that describes the scene's interactor.
 public protocol YMSInteractorProtocol: AnyObject {
     
     // MARK: Associated Types

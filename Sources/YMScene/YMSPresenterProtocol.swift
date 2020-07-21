@@ -12,6 +12,7 @@ import UIKit
 
 // MARK: - Presenter Protocol
 
+/// A protocol that describes the scene's presenter.
 public protocol YMSPresenterProtocol {
     
     // MARK: Associated Types
