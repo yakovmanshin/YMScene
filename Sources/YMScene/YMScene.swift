@@ -32,17 +32,6 @@ open class YMScene<
     
     // MARK: Initializers
     
-    /// Automatically initializes scene components of types specified in class declaration.
-    ///
-    /// - Parameter viewController: *Optional.* The view controller to use in the scene, if one is already instantiated.
-    @available(*, unavailable)
-    private init(viewController: ViewController?) {
-        let sceneComponents = Self.makeRequiredComponents(viewController: viewController)
-        
-        self.interactor = sceneComponents.interactor
-        self.viewController = sceneComponents.viewController
-    }
-    
     /// Initializes the scene with the provided input.
     ///
     /// - Parameter input: *Required.* The input provided by the object instantiating the scene.
