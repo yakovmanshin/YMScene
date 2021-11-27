@@ -10,10 +10,12 @@
 
 // MARK: - Requirements
 
-/// A protocol which enables the scene to be initialized when its view controllers is instantiated from a storyboard.
+/// A protocol which enables the scene to be initialized when its view controllers is instantiated from a storyboard or XIB.
 public protocol YMSViewControllerFromIB: YMSViewController {
     
-    /// Use this method to configure scenes instantiated from a NIB or storyboard.
+    /// Use this method to configure scenes instantiated from a XIB or storyboard.
+    ///
+    /// + This method has a default implementation.
     ///
     /// - Parameter input: *Required.* The input used for configuring the scene.
     func instantiateScene(with input: SceneInput)

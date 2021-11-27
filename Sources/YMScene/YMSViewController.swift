@@ -21,6 +21,9 @@ public protocol YMSViewController: UIViewController {
     
     init()
     
+    /// Allows the view controller to make the necessary preparations before it’s displayed.
+    ///
+    /// - Parameter input: *Required.* The object used to set up the scene.
     func configureScene(with input: SceneInput)
     
 }
